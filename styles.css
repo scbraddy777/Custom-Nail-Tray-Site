@@ -119,8 +119,8 @@ img {
 }
 
 .brand-logo {
-  width: calc(92px * 1.27);
-  height: calc(92px * 1.27);
+  width: calc(92px * 2.54);
+  height: calc(92px * 2.54);
   object-fit: contain;
   flex: 0 0 auto;
 }
@@ -688,8 +688,8 @@ img {
   }
 
   .brand-logo {
-    width: calc(78px * 1.27);
-    height: calc(78px * 1.27);
+    width: calc(78px * 2.54);
+    height: calc(78px * 2.54);
   }
 
   .site-nav,
