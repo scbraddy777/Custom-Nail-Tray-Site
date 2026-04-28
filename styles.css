@@ -118,16 +118,11 @@ img {
   gap: 14px;
 }
 
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, var(--blue) 0%, var(--blue-night) 100%);
-  color: #ffffff;
-  font-weight: 800;
-  letter-spacing: 0.04em;
+.brand-logo {
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+  flex: 0 0 auto;
 }
 
 .brand-copy {
@@ -690,6 +685,11 @@ img {
 
   .site-header {
     position: static;
+  }
+
+  .brand-logo {
+    width: 78px;
+    height: 78px;
   }
 
   .site-nav,
