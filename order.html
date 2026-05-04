@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order | Custom Nail Tray</title>
+    <meta
+      name="description"
+      content="Request a Custom Nail Tray impression kit and get answers about topical use, photo review, remakes, and tray fabrication."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-order">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Custom Nail Tray home">
+        <img
+          class="brand-logo"
+          src="assets/cnt-logo.png"
+          alt=""
+          decoding="async"
+        />
+        <span>
+          <strong>Custom Nail Tray</strong>
+          <small>Custom-fit nail care delivery</small>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="order.html#faq">FAQ</a>
+      </nav>
+
+      <a class="button button-primary" href="#order">Start an order</a>
+    </header>
+
+    <main>
+      <section class="page-hero page-hero-order">
+        <div class="page-hero-copy">
+          <p class="kicker">Request a kit</p>
+          <h1>Start with the at-home impression kit.</h1>
+          <p>
+            Tell us what type of tray you need and what routine you are building
+            around it. We will use the request to start the kit process.
+          </p>
+        </div>
+        <aside class="order-hero-panel" aria-label="Order overview">
+          <p class="panel-label">What happens next</p>
+          <ol class="order-hero-list">
+            <li><span>01</span> Request the impression kit</li>
+            <li><span>02</span> Follow the included home instructions</li>
+            <li><span>03</span> Send photos before mailing back</li>
+            <li><span>04</span> Receive trays made for your nails</li>
+          </ol>
+          <p>
+            Need a faster turnaround or a permanent scan for future trays?
+            We can help with that too.
+          </p>
+        </aside>
+      </section>
+
+      <section class="order-section" id="order">
+        <div class="order-copy">
+          <p class="kicker">Start here</p>
+          <h2>Order the kit, make the impressions, and we build the trays.</h2>
+          <p>
+            Custom Nail Tray is a delivery tray system for use with your chosen
+            nail care product. It is not itself a medication.
+          </p>
+        </div>
+
+        <aside class="order-guide" aria-label="Order guide">
+          <article>
+            <strong>Included in the kit</strong>
+            <p>Putty, written instructions, and the return flow for approved impressions.</p>
+          </article>
+          <article>
+            <strong>Best for</strong>
+            <p>Toenail fungus routines, nail hydration, repair support, and preventative care.</p>
+          </article>
+          <article>
+            <strong>Before you mail it back</strong>
+            <p>Send photos first so obvious issues can be caught before fabrication starts.</p>
+          </article>
+        </aside>
+
+        <form
+          class="order-form"
+          name="kit-request"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="kit-request" />
+          <p class="hidden-field">
+            <label>Do not fill this out: <input name="bot-field" /></label>
+          </p>
+
+          <div class="form-grid">
+            <label>
+              Full name
+              <input name="full-name" type="text" autocomplete="name" required />
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" autocomplete="email" required />
+            </label>
+            <label>
+              Phone (optional)
+              <input name="phone" type="tel" autocomplete="tel" />
+            </label>
+            <label>
+              Tray area
+              <select name="tray-area" required>
+                <option value="">Select one</option>
+                <option>Toenail tray</option>
+                <option>Fingernail tray</option>
+                <option>Both toes and fingers</option>
+              </select>
+            </label>
+            <label class="full-field">
+              What are you hoping to use it for?
+              <textarea
+                name="use-case"
+                rows="4"
+                placeholder="Example: antifungal ointment retention, hydration, nail repair, or prevention."
+              ></textarea>
+            </label>
+          </div>
+
+          <button class="button button-primary" type="submit">Request impression kit</button>
+          <p class="form-note">
+            Prefer email? Contact
+            <a href="mailto:info@customnailtray.com">info@customnailtray.com</a>.
+          </p>
+        </form>
+      </section>
+
+      <section class="assurance-strip" aria-label="Order support">
+        <article>
+          <strong>Photo-reviewed impressions</strong>
+          <span>Reduce remakes before the kit is mailed back.</span>
+        </article>
+        <article>
+          <strong>Replacement support</strong>
+          <span>Free supplies are available if a first attempt needs to be redone.</span>
+        </article>
+        <article>
+          <strong>Rush option</strong>
+          <span>Faster production is available for customers who need trays sooner.</span>
+        </article>
+        <article>
+          <strong>Saved scan upgrade</strong>
+          <span>A permanent 3D record can make future duplicates easier.</span>
+        </article>
+      </section>
+
+      <section class="faq-section" id="faq">
+        <div class="section-copy">
+          <p class="kicker">Questions</p>
+          <h2>Clear answers before customers order.</h2>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>Is Custom Nail Tray a medication?</summary>
+            <p>
+              No. Custom Nail Tray is a custom-fit tray system designed to be
+              used with the nail care product a customer chooses.
+            </p>
+          </details>
+          <details>
+            <summary>Can it be used with antifungal ointment?</summary>
+            <p>
+              Yes, it is designed to help hold topical products closer to the
+              nail plate as part of a consistent care routine.
+            </p>
+          </details>
+          <details>
+            <summary>What if the impression does not come out right?</summary>
+            <p>
+              Customers can send photos for review before mailing impressions
+              back, and replacement supplies are available when a first attempt
+              needs to be redone.
+            </p>
+          </details>
+          <details>
+            <summary>Does it work for toenails and fingernails?</summary>
+            <p>
+              Yes. The kit can be used for toe or fingernail impressions so the
+              finished tray can match the selected nail shape.
+            </p>
+          </details>
+          <details>
+            <summary>Can I use any nail care product with it?</summary>
+            <p>
+              The tray is intended to support topical nail care products, but
+              customers should follow the directions for the product they choose.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <strong>Custom Nail Tray</strong>
+      <a href="mailto:info@customnailtray.com">info@customnailtray.com</a>
+      <span>customnailtray.com</span>
+    </footer>
+  </body>
+</html>

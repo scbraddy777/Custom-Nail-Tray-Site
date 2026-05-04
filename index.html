@@ -11,354 +11,215 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <div class="page-shell">
-      <header class="site-header">
-        <a class="brand" href="#top">
+  <body class="page-home">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Custom Nail Tray home">
+        <img
+          class="brand-logo"
+          src="assets/cnt-logo.png"
+          alt=""
+          decoding="async"
+        />
+        <span>
+          <strong>Custom Nail Tray</strong>
+          <small>Custom-fit nail care delivery</small>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="order.html#faq">FAQ</a>
+      </nav>
+
+      <a class="button button-primary" href="order.html">Start an order</a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img
+          class="hero-image"
+          src="assets/impressions.png"
+          alt="Custom Nail Tray order materials with toe and fingernail tray examples"
+          decoding="async"
+        />
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+          <p class="kicker">Custom-fit nail tray system</p>
+          <h1 id="hero-title">Custom Nail Tray</h1>
+          <p class="hero-lead">
+            A made-to-order tray that helps keep antifungal ointments,
+            moisturizers, and repair serums in close contact with the nail plate
+            for longer, cleaner wear.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="order.html">Start your impression kit</a>
+            <a class="button button-light" href="how-it-works.html">See the process</a>
+          </div>
+
+          <dl class="hero-specs" aria-label="Product highlights">
+            <div>
+              <dt>Fit</dt>
+              <dd>Made from your nail impressions</dd>
+            </div>
+            <div>
+              <dt>Use</dt>
+              <dd>For toes and fingernails</dd>
+            </div>
+            <div>
+              <dt>Review</dt>
+              <dd>Photos checked before fabrication</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="statement" id="benefits">
+        <div class="section-copy">
+          <p class="kicker">The difference</p>
+          <h2>Treatment products work best when they stay where you put them.</h2>
+        </div>
+        <div class="statement-body">
+          <p>
+            Custom Nail Tray is shaped around the customer, not a generic mold.
+            The tray creates a more controlled way to hold nail care products
+            against the nail surface while reducing shifting, smearing, and
+            wasted product.
+          </p>
+          <ul class="proof-list">
+            <li>Built-in reservoir helps hold product at the nail plate.</li>
+            <li>Custom fit helps make longer wear easier to keep up with.</li>
+            <li>At-home photo review helps confirm impressions before mailing.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="kit-section" id="kit">
+        <div class="kit-heading">
+          <p class="kicker">What arrives</p>
+          <h2>A guided impression kit built to reduce guesswork.</h2>
+          <a class="text-link" href="how-it-works.html">View the full process</a>
+        </div>
+
+        <div class="kit-layout">
+          <figure class="kit-visual">
+            <img
+              src="assets/impressionsFront.png"
+              alt="Custom Nail Tray instruction materials for at-home impressions"
+              decoding="async"
+            />
+            <figcaption>
+              Each kit includes written, visual, and video guidance for taking
+              impressions at home.
+            </figcaption>
+          </figure>
+
+          <div class="kit-inventory" aria-label="Kit contents">
+            <article>
+              <span>01</span>
+              <div>
+                <h3>Impression materials</h3>
+                <p>Putty and supplies for capturing the shape of the selected nails.</p>
+              </div>
+            </article>
+            <article>
+              <span>02</span>
+              <div>
+                <h3>Guided instructions</h3>
+                <p>Step-by-step support for mixing, placing, numbering, and returning impressions.</p>
+              </div>
+            </article>
+            <article>
+              <span>03</span>
+              <div>
+                <h3>Photo review</h3>
+                <p>Customers can send photos before mailing impressions back for fabrication.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="use-section" id="uses">
+        <div class="use-media">
           <img
-            class="brand-logo"
-            src="assets/cnt-logo.png"
-            alt="Custom Nail Tray logo"
+            src="assets/impressions.png"
+            alt="Examples of Custom Nail Tray on toes and fingernails"
             decoding="async"
           />
-          <span class="brand-copy">
-            <strong>Custom Nail Tray</strong>
-            <span>Custom-fit nail care delivery</span>
-          </span>
-        </a>
-
-        <nav class="site-nav" aria-label="Primary">
-          <a href="#benefits">Benefits</a>
-          <a href="#uses">Uses</a>
-          <a href="#how-it-works">How it works</a>
-          <a href="#order">Order</a>
-        </nav>
-
-        <a class="button button-primary" href="#order">Get started</a>
-      </header>
-
-      <main id="top">
-        <section class="hero">
-          <div class="hero-panel">
-            <div class="hero-copy">
-              <span class="eyebrow">Custom-fit tray system for targeted nail care</span>
-              <h1>Make nail treatment easier to wear, cleaner to apply, and harder to forget.</h1>
-              <p class="hero-lead">
-                Custom Nail Tray turns your nail impressions into trays that help keep
-                antifungal ointments, repair serums, and moisturizers in close contact
-                with the nail plate for longer wear.
-              </p>
-
-              <div class="hero-actions">
-                <a class="button button-primary" href="#order">Start your impression kit</a>
-                <a class="button button-secondary" href="#how-it-works">See the process</a>
-              </div>
-
-              <ul class="hero-points">
-                <li>At-home impression kit with guided instructions</li>
-                <li>Photo review before impressions are mailed back</li>
-                <li>Custom-made trays for toes and fingernails</li>
-              </ul>
-            </div>
-
-            <div class="hero-media">
-              <figure class="media-card media-card-main">
-                <span class="media-tag">Custom-made fit</span>
-                <img
-                  src="assets/impressions.png"
-                  alt="Custom nail trays worn on toes and fingernails"
-                  class="media-image media-focus-center"
-                />
-              </figure>
-
-              <figure class="media-card media-card-guide">
-                <div class="guide-image">
-                  <img
-                    src="assets/impressionsFront.png"
-                    alt="Impression kit instruction layout"
-                    class="media-image media-focus-guide"
-                  />
-                </div>
-                <figcaption>
-                  <strong>At-home impression guide</strong>
-                  <span>Written, visual, and video instructions are included with every kit.</span>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </section>
-
-        <section class="trust-strip" aria-label="Highlights">
-          <article>
-            <strong>Built-in reservoir</strong>
-            <span>Helps hold product against the nail more effectively.</span>
-          </article>
-          <article>
-            <strong>Photo-reviewed fit</strong>
-            <span>Impressions are checked before you mail them back.</span>
-          </article>
-          <article>
-            <strong>Made to order</strong>
-            <span>Each tray is produced from your own nail impressions.</span>
-          </article>
-        </section>
-
-        <section class="section" id="benefits">
-          <div class="section-header">
-            <div>
-              <span class="eyebrow">Why it stands out</span>
-              <h2>More consistent care starts with a better fit.</h2>
-            </div>
-            <p>
-              The tray is shaped to the nail itself, which makes it more comfortable
-              to wear and better suited for targeted nail care than one-size-fits-all
-              covers.
-            </p>
-          </div>
-
-          <div class="benefit-grid">
-            <article class="info-card">
-              <h3>Antifungal support</h3>
-              <p>
-                Helps keep antifungal ointment in close contact with the nail plate as
-                part of a more disciplined routine.
-              </p>
-            </article>
-            <article class="info-card">
-              <h3>Nail slugging and hydration</h3>
-              <p>
-                Works with moisturizers and protective treatments for dry, brittle, or
-                stressed nails.
-              </p>
-            </article>
-            <article class="info-card">
-              <h3>Repair and regrowth</h3>
-              <p>
-                Pair with growth serums and restorative care after gel manicures or
-                repeated cosmetic damage.
-              </p>
-            </article>
-            <article class="info-card">
-              <h3>Nail-biting interruption</h3>
-              <p>
-                Creates a physical barrier that can help protect nails while they grow
-                back out.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section showcase" id="uses">
-          <div class="section-header">
-            <div>
-              <span class="eyebrow">Made for real routines</span>
-              <h2>One custom-fit tray, multiple ways to care for your nails.</h2>
-            </div>
-            <p>
-              Custom Nail Tray can be used with antifungal ointments, moisturizing
-              treatments, cuticle oils, and nail repair products whenever longer,
-              cleaner contact with the nail matters.
-            </p>
-          </div>
-
-          <div class="showcase-layout">
-            <div class="showcase-copy">
-              <div class="check-grid">
-                <article class="support-card">
-                  <strong>Best fit for</strong>
-                  <ul class="check-list">
-                    <li>Toenail fungus care routines</li>
-                    <li>Moisturizing and protective slugging</li>
-                    <li>Repair after gel manicure damage</li>
-                  </ul>
-                </article>
-                <article class="support-card">
-                  <strong>Also useful for</strong>
-                  <ul class="check-list">
-                    <li>Cuticle oil and preventative care</li>
-                    <li>Fingernail treatment support</li>
-                    <li>Breaking the nail-biting habit</li>
-                  </ul>
-                </article>
-              </div>
-            </div>
-
-            <div class="showcase-media">
-              <figure class="media-card media-card-vertical">
-                <img
-                  src="assets/impressions.png"
-                  alt="Custom nail trays displayed on toes and fingers"
-                  class="media-image media-focus-brand"
-                />
-              </figure>
-              <div class="support-note">
-                <strong>Why the fit matters</strong>
-                <p>
-                  Generic covers can shift or leak. A tray shaped to your impressions is
-                  intended to fit more securely, feel more natural, and reduce wasted
-                  product.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="section process" id="how-it-works">
-          <div class="section-header">
-            <div>
-              <span class="eyebrow">Simple process</span>
-              <h2>From impression kit to finished trays in four clear steps.</h2>
-            </div>
-            <p>
-              Everything starts at home. You take your impressions, send photos for
-              approval, then mail them in for fabrication.
-            </p>
-          </div>
-
-          <div class="process-layout">
-            <div class="process-steps">
-              <article class="step-card">
-                <span>1</span>
-                <div>
-                  <h3>Order the kit</h3>
-                  <p>Receive impression materials, return supplies, and guided instructions.</p>
-                </div>
-              </article>
-              <article class="step-card">
-                <span>2</span>
-                <div>
-                  <h3>Make your impressions</h3>
-                  <p>Capture the shape of each nail at home using the included putty.</p>
-                </div>
-              </article>
-              <article class="step-card">
-                <span>3</span>
-                <div>
-                  <h3>Send photos for review</h3>
-                  <p>Get your impressions checked before mailing them back for production.</p>
-                </div>
-              </article>
-              <article class="step-card">
-                <span>4</span>
-                <div>
-                  <h3>Receive your custom trays</h3>
-                  <p>Your trays are produced from the approved impressions and sent back to you.</p>
-                </div>
-              </article>
-            </div>
-
-            <aside class="guide-card">
-              <span class="eyebrow">Included guidance</span>
-              <h3>Simple at-home steps with photo approval</h3>
-              <p>
-                Written, visual, and video directions help customers take better
-                impressions the first time.
-              </p>
-
-              <div class="guide-preview">
-                <img
-                  src="assets/impressionsFront.png"
-                  alt="Instruction guide preview"
-                  class="media-image media-focus-guide"
-                />
-              </div>
-
-              <div class="guide-points" aria-label="Key instruction steps">
-                <span>Mix the putty</span>
-                <span>Capture the nail</span>
-                <span>Approve the fit</span>
-              </div>
-
-              <div class="guide-actions">
-                <a class="button button-secondary" href="impressionsFront.pdf">Open impression guide</a>
-                <p>Photo approval helps reduce remakes and delays.</p>
-              </div>
-            </aside>
-          </div>
-        </section>
-
-        <section class="section support-section" id="order-details">
-          <div class="section-header">
-            <div>
-              <span class="eyebrow">What comes with every order</span>
-              <h2>Built to move from impression to tray with less friction.</h2>
-            </div>
-            <p>
-              From photo review to future reorders, every part of the process is designed
-              to be easy to follow.
-            </p>
-          </div>
-
-          <div class="support-layout">
-            <div class="detail-grid">
-              <article>
-                <strong>Photo-reviewed impressions</strong>
-                <span>Customers can get their impressions checked before sending them back.</span>
-              </article>
-              <article>
-                <strong>Replacement support</strong>
-                <span>Free supplies are available if the first attempt needs to be redone.</span>
-              </article>
-              <article>
-                <strong>Rush option available</strong>
-                <span>Faster turnaround is available for customers who want trays sooner.</span>
-              </article>
-              <article>
-                <strong>Saved scan upgrade</strong>
-                <span>A permanent 3D record can make future duplicate trays easier.</span>
-              </article>
-            </div>
-
-            <div class="support-side">
-              <div class="support-note support-note-dark">
-                <strong>Important note</strong>
-                <p>
-                  Custom Nail Tray is a tray system designed to be used with your chosen
-                  nail care product. It is not itself a medication.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="section cta-section" id="order">
-          <div class="cta-card">
-            <div class="cta-copy">
-              <span class="eyebrow">Ready to begin</span>
-              <h2>Start with the at-home impression kit.</h2>
-              <p>
-                Custom Nail Tray begins with a simple kit, then turns your impressions
-                into trays made for your exact nail shape.
-              </p>
-            </div>
-
-            <div class="cta-actions">
-              <a
-                class="button button-primary"
-                href="mailto:info@customnailtray.com?subject=Custom%20Nail%20Tray%20Order%20Inquiry"
-                >Email to order</a
-              >
-              <a class="button button-secondary" href="impressions.pdf">View product overview</a>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <div class="footer-copy">
-          <strong>Custom Nail Tray</strong>
-          <span>Custom-fit trays for targeted nail care routines.</span>
         </div>
-        <div class="footer-links">
-          <a href="mailto:info@customnailtray.com">info@customnailtray.com</a>
-          <span>customnailtray.com</span>
+
+        <div class="use-content">
+          <p class="kicker">Use cases</p>
+          <h2>Built for routines that need steady contact time.</h2>
+
+          <div class="use-grid">
+            <article>
+              <span>01</span>
+              <h3>Toenail fungus care</h3>
+              <p>Helps hold antifungal ointment close to the nail as part of a consistent routine.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Nail slugging</h3>
+              <p>Pairs with moisturizers, cuticle oils, and protective treatments for dry nails.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Repair support</h3>
+              <p>Useful with recovery products after gel manicures or cosmetic nail damage.</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>Nail-biting barrier</h3>
+              <p>Creates a physical reminder that helps protect fingernails while they grow out.</p>
+            </article>
+          </div>
         </div>
-      </footer>
-    </div>
+      </section>
+
+      <section class="process-preview" aria-labelledby="process-preview-title">
+        <div class="section-copy">
+          <p class="kicker">Simple path</p>
+          <h2 id="process-preview-title">Order the kit, send impressions, receive custom trays.</h2>
+        </div>
+        <div class="preview-actions">
+          <a class="button button-primary" href="how-it-works.html">How it works</a>
+          <a class="button button-secondary" href="order.html">Request a kit</a>
+        </div>
+      </section>
+
+      <section class="assurance-strip" aria-label="Order support">
+        <article>
+          <strong>Photo-reviewed impressions</strong>
+          <span>Reduce remakes before the kit is mailed back.</span>
+        </article>
+        <article>
+          <strong>Replacement support</strong>
+          <span>Free supplies are available if a first attempt needs to be redone.</span>
+        </article>
+        <article>
+          <strong>Rush option</strong>
+          <span>Faster production is available for customers who need trays sooner.</span>
+        </article>
+        <article>
+          <strong>Saved scan upgrade</strong>
+          <span>A permanent 3D record can make future duplicates easier.</span>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <strong>Custom Nail Tray</strong>
+      <a href="mailto:info@customnailtray.com">info@customnailtray.com</a>
+      <span>customnailtray.com</span>
+    </footer>
   </body>
 </html>
