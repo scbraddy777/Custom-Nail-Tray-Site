@@ -15,7 +15,7 @@ function isDemoMode() {
 }
 
 function readOrder(form) {
-  const product = form.querySelector('input[name="product"]:checked')?.value || "Custom Nail Tray";
+  const product = $("#product", form)?.value.trim() || "Custom Nail Tray Kit";
   const quantity = Number($("#quantity", form)?.value || 1);
   const addons = $all('input[name="addons"]:checked', form).map((input) => input.value);
 

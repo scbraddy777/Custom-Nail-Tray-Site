@@ -1,5 +1,4 @@
 const REQUIRED_FIELDS = [
-  "product",
   "quantity",
   "fullName",
   "email",
@@ -80,7 +79,7 @@ exports.handler = async (event) => {
   const missingEnv = REQUIRED_ENV.filter((key) => !process.env[key]);
 
   const safeOrder = {
-    product: order.product,
+    product: order.product || "Custom Nail Tray Kit",
     quantity: Number(order.quantity),
     addons: Array.isArray(order.addons) ? order.addons : [],
     fullName: order.fullName,
