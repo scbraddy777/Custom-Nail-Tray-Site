@@ -1,6 +1,17 @@
 const DRAFT_KEY = "cnt-order-draft";
 const WINDOW_NAME_KEY = "cnt-order-demo";
 const DEMO_QUERY = "demo=1";
+const BASE_PRICE_CENTS = 2999;
+const SHIPPING_CENTS = 799;
+const ADDON_PRICES = new Map([
+  ["Rush production", 999],
+  ["Extra tray / duplicate tray", 899],
+  ["Saved scan upgrade", 499],
+]);
+const MONEY_FORMATTER = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+});
 
 function $(selector, root = document) {
   return root.querySelector(selector);
@@ -8,6 +19,10 @@ function $(selector, root = document) {
 
 function $all(selector, root = document) {
   return Array.from(root.querySelectorAll(selector));
+}
+
+function formatMoney(cents) {
+  return MONEY_FORMATTER.format((cents || 0) / 100);
 }
 
 function isDemoMode() {
@@ -68,33 +83,73 @@ function loadDraft() {
   return null;
 }
 
+function calculatePricing(order) {
+  const quantity = Number.isFinite(order.quantity) && order.quantity > 0 ? order.quantity : 1;
+  const selectedAddons = Array.isArray(order.addons) ? order.addons : [];
+  const addonTotal = selectedAddons.reduce((total, addon) => {
+    return total + (ADDON_PRICES.get(addon) || 0);
+  }, 0);
+  const baseSubtotal = BASE_PRICE_CENTS * quantity;
+  const total = baseSubtotal + addonTotal + SHIPPING_CENTS;
+
+  return {
+    quantity,
+    baseSubtotal,
+    addonTotal,
+    shipping: SHIPPING_CENTS,
+    total,
+    selectedAddons,
+  };
+}
+
 function renderSummary(order) {
   const summaryProduct = $("[data-summary-product]");
   const summaryQuantity = $("[data-summary-quantity]");
   const summaryAddons = $("[data-summary-addons]");
+  const summarySubtotal = $("[data-summary-subtotal]");
+  const summaryAddonTotal = $("[data-summary-addon-total]");
+  const summaryShippingCost = $("[data-summary-shipping-cost]");
+  const summaryTotal = $("[data-summary-total]");
   const summaryContact = $("[data-summary-contact]");
   const summaryShipping = $("[data-summary-shipping]");
   const summaryNotes = $("[data-summary-notes]");
+  const pricing = calculatePricing(order);
 
   if (summaryProduct) {
-    summaryProduct.textContent = order.product || "Custom Nail Tray";
+    summaryProduct.textContent = order.product || "Custom Nail Tray Kit";
   }
 
   if (summaryQuantity) {
-    summaryQuantity.textContent = `Quantity: ${order.quantity || 1}`;
+    summaryQuantity.textContent = `Quantity: ${pricing.quantity}`;
   }
 
   if (summaryAddons) {
     summaryAddons.innerHTML = "";
-    if (order.addons.length === 0) {
+    if (pricing.selectedAddons.length === 0) {
       summaryAddons.innerHTML = "<li>Add-ons: none selected</li>";
     } else {
-      order.addons.forEach((addon) => {
+      pricing.selectedAddons.forEach((addon) => {
         const item = document.createElement("li");
-        item.textContent = addon;
+        item.textContent = `${addon} · ${formatMoney(ADDON_PRICES.get(addon) || 0)}`;
         summaryAddons.appendChild(item);
       });
     }
+  }
+
+  if (summarySubtotal) {
+    summarySubtotal.textContent = formatMoney(pricing.baseSubtotal);
+  }
+
+  if (summaryAddonTotal) {
+    summaryAddonTotal.textContent = formatMoney(pricing.addonTotal);
+  }
+
+  if (summaryShippingCost) {
+    summaryShippingCost.textContent = formatMoney(pricing.shipping);
+  }
+
+  if (summaryTotal) {
+    summaryTotal.textContent = formatMoney(pricing.total);
   }
 
   if (summaryContact) {
@@ -149,8 +204,9 @@ async function handleOrderSubmit(event) {
   setStatus("Creating your order summary...", "info");
 
   try {
+    saveDraft(order);
+
     if (isDemoMode()) {
-      saveDraft(order);
       window.name = JSON.stringify({ [WINDOW_NAME_KEY]: order });
       window.location.href = "success.html?demo=1";
       return;
@@ -210,6 +266,13 @@ function initializeSuccessPage() {
     return;
   }
 
+  const searchParams = new URLSearchParams(window.location.search);
+  const hasCheckoutSession = searchParams.has("session_id");
+  const isDemo = window.location.search.includes(DEMO_QUERY);
+  if (!hasCheckoutSession && !isDemo) {
+    return;
+  }
+
   const draft = loadDraft();
   if (!draft) {
     return;
@@ -222,7 +285,7 @@ function initializeSuccessPage() {
   const addons = $("[data-success-addons]");
 
   if (product) {
-    product.textContent = draft.product || "Custom Nail Tray";
+    product.textContent = draft.product || "Custom Nail Tray Kit";
   }
 
   if (contact) {
@@ -243,7 +306,7 @@ function initializeSuccessPage() {
     addons.textContent = draft.addons && draft.addons.length > 0 ? draft.addons.join(" · ") : "No add-ons selected.";
   }
 
-  if (window.location.search.includes(DEMO_QUERY)) {
+  if (isDemo) {
     shell.dataset.demo = "true";
     const demoBanner = $("[data-demo-banner]", shell);
     if (demoBanner) {

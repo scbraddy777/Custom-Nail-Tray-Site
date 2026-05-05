@@ -1796,6 +1796,17 @@ body.page-cancel .hero-note {
   border-top: 1px solid rgba(15, 23, 42, 0.08);
 }
 
+.summary-row-total {
+  margin-top: 2px;
+  padding-top: 18px;
+  border-top-color: rgba(36, 95, 223, 0.22);
+}
+
+.summary-row-total span,
+.summary-row-total strong {
+  color: var(--blue-deep);
+}
+
 .summary-row span,
 .confirmation-row span {
   color: var(--muted);
