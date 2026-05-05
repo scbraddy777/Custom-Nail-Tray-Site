@@ -3,20 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Order | Custom Nail Tray</title>
+    <title>Order Custom Nail Tray | Custom Nail Tray</title>
     <meta
       name="description"
-      content="Request a Custom Nail Tray impression kit and get answers about topical use, photo review, remakes, and tray fabrication."
+      content="Order Custom Nail Tray, review product options, enter shipping details, and prepare for secure Stripe Checkout."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="order.js" defer></script>
   </head>
-  <body class="page-order">
+  <body class="page-order page-checkout">
     <header class="site-header">
       <a class="brand" href="index.html" aria-label="Custom Nail Tray home">
         <img
@@ -37,109 +38,229 @@
         <a href="order.html#faq">FAQ</a>
       </nav>
 
-      <a class="button button-primary" href="#order">Start an order</a>
+      <a class="button button-primary" href="#checkout">Review order</a>
     </header>
 
     <main>
-      <section class="page-hero page-hero-order">
+      <section class="page-hero page-hero-order" aria-labelledby="order-hero-title">
         <div class="page-hero-copy">
-          <p class="kicker">Request a kit</p>
-          <h1>Start with the at-home impression kit.</h1>
+          <p class="kicker">Order Custom Nail Tray</p>
+          <h1 id="order-hero-title">Order Custom Nail Tray.</h1>
           <p>
-            Tell us what type of tray you need and what routine you are building
-            around it. We will use the request to start the kit process.
+            Pay securely with Stripe. You’ll receive next-step instructions after checkout.
+          </p>
+          <p class="hero-note">
+            Shipping address is required so we can send your kit/product.
           </p>
         </div>
         <aside class="order-hero-panel" aria-label="Order overview">
-          <p class="panel-label">What happens next</p>
+          <p class="panel-label">What you’ll receive</p>
           <ol class="order-hero-list">
-            <li><span>01</span> Request the impression kit</li>
-            <li><span>02</span> Follow the included home instructions</li>
-            <li><span>03</span> Send photos before mailing back</li>
-            <li><span>04</span> Receive trays made for your nails</li>
+            <li><span>01</span> Custom tray built from your impressions</li>
+            <li><span>02</span> Fixed shipping for the kit/product</li>
+            <li><span>03</span> Next-step instructions by email</li>
+            <li><span>04</span> Support if you need help with impressions</li>
           </ol>
           <p>
-            Need a faster turnaround or a permanent scan for future trays?
-            We can help with that too.
+            The checkout flow is intentionally simple so customers can review the
+            product, confirm shipping, and move through payment with confidence.
           </p>
         </aside>
       </section>
 
-      <section class="order-section" id="order">
-        <div class="order-copy">
-          <p class="kicker">Start here</p>
-          <h2>Order the kit, make the impressions, and we build the trays.</h2>
+      <section class="order-shell" id="checkout">
+        <div class="section-copy order-shell-copy">
+          <p class="kicker">Checkout</p>
+          <h2>Review your order before payment.</h2>
           <p>
-            Custom Nail Tray is a delivery tray system for use with your chosen
-            nail care product. It is not itself a medication.
+            Choose the tray setup, add any extras, and enter shipping details.
+            The summary on the right updates as you go.
           </p>
         </div>
 
-        <aside class="order-guide" aria-label="Order guide">
-          <article>
-            <strong>Included in the kit</strong>
-            <p>Putty, written instructions, and the return flow for approved impressions.</p>
-          </article>
-          <article>
-            <strong>Best for</strong>
-            <p>Toenail fungus routines, nail hydration, repair support, and preventative care.</p>
-          </article>
-          <article>
-            <strong>Before you mail it back</strong>
-            <p>Send photos first so obvious issues can be caught before fabrication starts.</p>
-          </article>
-        </aside>
+        <div class="order-layout">
+          <form
+            class="order-form order-checkout-form"
+            name="checkout-order"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            data-order-form
+          >
+            <input type="hidden" name="form-name" value="checkout-order" />
+            <p class="hidden-field">
+              <label>Do not fill this out: <input name="bot-field" /></label>
+            </p>
 
-        <form
-          class="order-form"
-          name="kit-request"
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-        >
-          <input type="hidden" name="form-name" value="kit-request" />
-          <p class="hidden-field">
-            <label>Do not fill this out: <input name="bot-field" /></label>
-          </p>
+            <section class="fieldset-card">
+              <div class="section-head">
+                <h3>Product selection</h3>
+                <p>Pick the tray type and how many you want.</p>
+              </div>
 
-          <div class="form-grid">
-            <label>
-              Full name
-              <input name="full-name" type="text" autocomplete="name" required />
-            </label>
-            <label>
-              Email
-              <input name="email" type="email" autocomplete="email" required />
-            </label>
-            <label>
-              Phone (optional)
-              <input name="phone" type="tel" autocomplete="tel" />
-            </label>
-            <label>
-              Tray area
-              <select name="tray-area" required>
-                <option value="">Select one</option>
-                <option>Toenail tray</option>
-                <option>Fingernail tray</option>
-                <option>Both toes and fingers</option>
-              </select>
-            </label>
-            <label class="full-field">
-              What are you hoping to use it for?
-              <textarea
-                name="use-case"
-                rows="4"
-                placeholder="Example: antifungal ointment retention, hydration, nail repair, or prevention."
-              ></textarea>
-            </label>
-          </div>
+              <div class="product-grid">
+                <label class="option-card">
+                  <input type="radio" name="product" value="Toenail tray" checked />
+                  <strong>Toenail tray</strong>
+                  <span>Best for toe-focused routines and impression kits.</span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="product" value="Fingernail tray" />
+                  <strong>Fingernail tray</strong>
+                  <span>Made for nail care routines and daily hand use.</span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="product" value="Both toes and fingers" />
+                  <strong>Both toes and fingers</strong>
+                  <span>A paired order for a complete custom nail care setup.</span>
+                </label>
+              </div>
 
-          <button class="button button-primary" type="submit">Request impression kit</button>
-          <p class="form-note">
-            Prefer email? Contact
-            <a href="mailto:info@customnailtray.com">info@customnailtray.com</a>.
-          </p>
-        </form>
+              <div class="inline-fields">
+                <label class="field field-inline">
+                  Quantity
+                  <input id="quantity" name="quantity" type="number" min="1" max="10" value="1" required />
+                </label>
+              </div>
+
+              <div class="addon-group" aria-label="Optional add-ons">
+                <label class="addon-card">
+                  <input name="addons" type="checkbox" value="Rush production" />
+                  <span>
+                    <strong>Rush production</strong>
+                    <small>Faster turnaround when you need it sooner.</small>
+                  </span>
+                </label>
+                <label class="addon-card">
+                  <input name="addons" type="checkbox" value="Extra tray / duplicate tray" />
+                  <span>
+                    <strong>Extra tray / duplicate tray</strong>
+                    <small>Add a duplicate for backups or multiple routines.</small>
+                  </span>
+                </label>
+                <label class="addon-card">
+                  <input name="addons" type="checkbox" value="Saved scan upgrade" />
+                  <span>
+                    <strong>Saved scan upgrade</strong>
+                    <small>Keep a permanent digital record for future reorders.</small>
+                  </span>
+                </label>
+              </div>
+            </section>
+
+            <section class="fieldset-card">
+              <div class="section-head">
+                <h3>Customer details</h3>
+                <p>Use the email address where you want checkout and next steps sent.</p>
+              </div>
+
+              <div class="input-grid">
+                <label class="field">
+                  Full name
+                  <input id="full-name" name="fullName" type="text" autocomplete="name" required />
+                </label>
+                <label class="field">
+                  Email
+                  <input id="email" name="email" type="email" autocomplete="email" required />
+                </label>
+                <label class="field">
+                  Phone
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" />
+                </label>
+              </div>
+            </section>
+
+            <section class="fieldset-card">
+              <div class="section-head">
+                <h3>Shipping address</h3>
+                <p>Shipping address is required so we can send your kit/product.</p>
+              </div>
+
+              <div class="input-grid">
+                <label class="field field-span-2">
+                  Street address
+                  <input id="shipping-address" name="shippingAddress" type="text" autocomplete="shipping street-address" required />
+                </label>
+                <label class="field field-span-2">
+                  Apartment, suite, or unit
+                  <input id="apartment" name="apartment" type="text" autocomplete="shipping address-line2" />
+                </label>
+                <label class="field">
+                  City
+                  <input id="city" name="city" type="text" autocomplete="shipping address-level2" required />
+                </label>
+                <label class="field">
+                  State
+                  <input id="state" name="state" type="text" autocomplete="shipping address-level1" required />
+                </label>
+                <label class="field">
+                  Postal code
+                  <input id="postal-code" name="postalCode" type="text" autocomplete="shipping postal-code" required />
+                </label>
+                <label class="field">
+                  Country
+                  <input id="country" name="country" type="text" value="US" autocomplete="shipping country" required />
+                </label>
+              </div>
+            </section>
+
+            <section class="fieldset-card">
+              <div class="section-head">
+                <h3>Order notes</h3>
+                <p>Tell us anything that helps us prepare your kit.</p>
+              </div>
+
+              <label class="field">
+                Notes
+                <textarea
+                  id="notes"
+                  name="notes"
+                  rows="4"
+                  placeholder="Example: toe-focused order, need a duplicate tray, or any timing notes."
+                ></textarea>
+              </label>
+            </section>
+
+            <div class="form-actions">
+              <button class="button button-primary" id="checkout-button" type="submit">
+                Pay securely with Stripe
+              </button>
+              <p class="form-note">
+                You’ll receive next-step instructions after checkout.
+              </p>
+              <p class="form-status" data-order-status aria-live="polite"></p>
+            </div>
+          </form>
+
+          <aside class="order-summary-panel" aria-label="Order summary">
+            <p class="panel-label">Order summary</p>
+            <h2 data-summary-product>Custom Nail Tray</h2>
+            <p class="summary-meta" data-summary-quantity>Quantity: 1</p>
+            <ul class="summary-addons" data-summary-addons>
+              <li>Add-ons: none selected</li>
+            </ul>
+
+            <div class="summary-row">
+              <span>Contact</span>
+              <strong data-summary-contact>Enter contact details to continue</strong>
+            </div>
+
+            <div class="summary-row">
+              <span>Shipping</span>
+              <strong data-summary-shipping>Shipping address is required so we can send your kit/product.</strong>
+            </div>
+
+            <div class="summary-row">
+              <span>Next step</span>
+              <strong data-summary-notes>You’ll receive next-step instructions after checkout.</strong>
+            </div>
+
+            <div class="summary-callout">
+              <p>Pay securely with Stripe</p>
+              <span>Checkout is structured for Stripe and Netlify Functions.</span>
+            </div>
+          </aside>
+        </div>
       </section>
 
       <section class="assurance-strip" aria-label="Order support">
@@ -198,10 +319,10 @@
             </p>
           </details>
           <details>
-            <summary>Can I use any nail care product with it?</summary>
+            <summary>How does Stripe fit into the flow later?</summary>
             <p>
-              The tray is intended to support topical nail care products, but
-              customers should follow the directions for the product they choose.
+              The current build is ready for Stripe Checkout and Netlify Functions,
+              and the final payment step can be connected when you are ready.
             </p>
           </details>
         </div>

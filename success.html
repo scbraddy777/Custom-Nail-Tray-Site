@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmed | Custom Nail Tray</title>
+    <meta
+      name="description"
+      content="Your Custom Nail Tray order is confirmed. Watch your email for next-step instructions and support details."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="order.js" defer></script>
+  </head>
+  <body class="page-success">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Custom Nail Tray home">
+        <img class="brand-logo" src="assets/cnt-logo.png" alt="" decoding="async" />
+        <span>
+          <strong>Custom Nail Tray</strong>
+          <small>Custom-fit nail care delivery</small>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="order.html#faq">FAQ</a>
+      </nav>
+
+      <a class="button button-primary" href="order.html">Order again</a>
+    </header>
+
+    <main>
+      <section class="confirmation-shell" data-success-shell>
+        <div class="confirmation-copy">
+          <p class="kicker">Order confirmed</p>
+          <p class="demo-banner" data-demo-banner hidden>
+            Demo confirmation: Stripe Checkout is not connected yet in this build.
+          </p>
+          <h1>Order confirmed.</h1>
+          <p>
+            You’ll receive next-step instructions after checkout. Please watch your
+            email for confirmation details and impression-kit guidance.
+          </p>
+          <div class="confirmation-actions">
+            <a class="button button-primary" href="index.html">Return home</a>
+            <a class="button button-secondary" href="order.html">Back to order</a>
+          </div>
+        </div>
+
+        <aside class="confirmation-card">
+          <p class="panel-label">Order details</p>
+          <h2 data-success-product>Custom Nail Tray</h2>
+          <div class="confirmation-row">
+            <span>Customer</span>
+            <strong data-success-contact>Loading order details...</strong>
+          </div>
+          <div class="confirmation-row">
+            <span>Shipping</span>
+            <strong data-success-shipping>Please check the shipping address you entered.</strong>
+          </div>
+          <div class="confirmation-row">
+            <span>Add-ons</span>
+            <strong data-success-addons>None selected</strong>
+          </div>
+          <div class="confirmation-row">
+            <span>Next step</span>
+            <strong data-success-notes>Watch your email for next-step instructions.</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="confirmation-notes">
+        <article>
+          <strong>Watch your email</strong>
+          <span>We’ll use it for order confirmation and next-step instructions.</span>
+        </article>
+        <article>
+          <strong>Need help?</strong>
+          <span>Email <a href="mailto:info@customnailtray.com">info@customnailtray.com</a>.</span>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <strong>Custom Nail Tray</strong>
+      <a href="mailto:info@customnailtray.com">info@customnailtray.com</a>
+      <span>customnailtray.com</span>
+    </footer>
+  </body>
+</html>
