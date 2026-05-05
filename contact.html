@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Custom Nail Tray</title>
+    <meta
+      name="description"
+      content="Contact Custom Nail Tray for order help, impression questions, shipping support, and general assistance."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-contact">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Custom Nail Tray home">
+        <img class="brand-logo" src="assets/cnt-logo.png" alt="" decoding="async" />
+        <span>
+          <strong>Custom Nail Tray</strong>
+          <small>Custom-fit nail care delivery</small>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="order.html#faq">FAQ</a>
+        <a href="contact.html" aria-current="page">Contact Us</a>
+      </nav>
+
+      <a class="button button-primary" href="order.html">Start an order</a>
+    </header>
+
+    <main>
+      <section class="contact-hero" aria-labelledby="contact-title">
+        <p class="breadcrumb"><a href="index.html">Home</a> / Contact Us</p>
+        <p class="kicker">Contact us</p>
+        <h1 id="contact-title">Contact Custom Nail Tray.</h1>
+        <p class="contact-lead">
+          Need help with an order, impression kit, or shipping question? Send us a
+          message with your name and order details so we can help quickly.
+        </p>
+        <div class="contact-hours" aria-label="Support hours">
+          <span>Replies Monday-Friday</span>
+          <span>Email replies within 24-48 hours</span>
+          <span>Weekend messages answered in order received</span>
+        </div>
+        <div class="contact-callout">
+          <strong>For the fastest reply</strong>
+          <p>
+            Include your order ID, name, email, and whether the tray is for toes
+            or fingers.
+          </p>
+          <a href="order.html#faq">Visit the FAQ section</a>
+        </div>
+      </section>
+
+      <section class="contact-layout">
+        <aside class="contact-sidebar">
+          <article class="contact-card">
+            <p class="panel-label">Quick contact</p>
+            <a class="contact-email" href="mailto:info@customnailtray.com">
+              info@customnailtray.com
+            </a>
+            <p>
+              Questions about impressions, rush production, add-ons, or order
+              status are all welcome here.
+            </p>
+          </article>
+
+          <article class="contact-card">
+            <p class="panel-label">Before you write</p>
+            <ul class="contact-list">
+              <li>Your order number, if you have one</li>
+              <li>The email used at checkout</li>
+              <li>Whether the kit is for toes or fingers</li>
+            </ul>
+          </article>
+        </aside>
+
+        <section class="contact-form-panel" aria-labelledby="write-us-title">
+          <div class="section-copy">
+            <p class="kicker">Write us</p>
+            <h2 id="write-us-title">Send a message.</h2>
+            <p>
+              Tell us what you need help with and we’ll reply by email as soon as
+              possible.
+            </p>
+          </div>
+
+          <form
+            class="order-form contact-form"
+            name="contact-us"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="form-name" value="contact-us" />
+            <p class="hidden-field">
+              <label>Do not fill this out: <input name="bot-field" /></label>
+            </p>
+
+            <div class="form-grid">
+              <label>
+                Full name
+                <input name="fullName" type="text" autocomplete="name" required />
+              </label>
+              <label>
+                Email
+                <input name="email" type="email" autocomplete="email" required />
+              </label>
+              <label>
+                Order number
+                <input name="orderNumber" type="text" autocomplete="off" />
+              </label>
+              <label>
+                Topic
+                <select name="topic" required>
+                  <option value="">Choose one</option>
+                  <option>Order help</option>
+                  <option>Impression help</option>
+                  <option>Shipping question</option>
+                  <option>Rush order</option>
+                  <option>General question</option>
+                </select>
+              </label>
+              <label class="full-field">
+                Message
+                <textarea
+                  name="message"
+                  rows="6"
+                  placeholder="Tell us how we can help."
+                  required
+                ></textarea>
+              </label>
+            </div>
+
+            <button class="button button-primary" type="submit">Send message</button>
+            <p class="form-note">
+              We’ll respond by email using the address you provide above.
+            </p>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <strong>Custom Nail Tray</strong>
+      <a href="mailto:info@customnailtray.com">info@customnailtray.com</a>
+      <span>customnailtray.com</span>
+    </footer>
+  </body>
+</html>
