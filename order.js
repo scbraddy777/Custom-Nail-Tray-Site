@@ -4,9 +4,9 @@ const DEMO_QUERY = "demo=1";
 const BASE_PRICE_CENTS = 44999;
 const SHIPPING_CENTS = 799;
 const ADDON_PRICES = new Map([
-  ["Rush production", 999],
-  ["Extra tray / duplicate tray", 899],
-  ["Saved scan upgrade", 499],
+  ["Rush production", 7499],
+  ["Extra tray / duplicate tray", 9999],
+  ["Saved scan upgrade", 4999],
 ]);
 const MONEY_FORMATTER = new Intl.NumberFormat("en-US", {
   style: "currency",
