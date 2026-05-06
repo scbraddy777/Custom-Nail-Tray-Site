@@ -2606,6 +2606,8 @@ body.page-cancel .hero-note {
   }
 
   body.page-home .hero {
+    display: flex;
+    flex-direction: column;
     gap: 14px;
     padding: 28px 0 18px;
   }
@@ -2688,8 +2690,12 @@ body.page-cancel .hero-note {
   }
 
   body.page-home .hero-card {
-    order: -1;
+    order: 1 !important;
     border-radius: 22px;
+  }
+
+  body.page-home .hero-content {
+    order: 0 !important;
   }
 
   body.page-home .hero-card-preview .hero-card-body {
