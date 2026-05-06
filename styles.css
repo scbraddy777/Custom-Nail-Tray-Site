@@ -515,6 +515,10 @@ body.page-home .hero-card-preview .hero-card-body {
   padding: 44px 44px 40px;
 }
 
+body.page-home .hero-card-preview .panel-label {
+  color: var(--coral);
+}
+
 body.page-home .hero-card-media img {
   height: 280px;
   object-fit: cover;
@@ -523,11 +527,11 @@ body.page-home .hero-card-media img {
 
 body.page-home .hero-card h2 {
   margin: 0;
-  max-width: 9ch;
+  max-width: 13ch;
   font-family: "Source Serif 4", serif;
-  font-size: clamp(2.85rem, 3.9vw, 4.35rem);
-  line-height: 0.95;
-  letter-spacing: -0.06em;
+  font-size: clamp(2.55rem, 3.4vw, 3.9rem);
+  line-height: 0.96;
+  letter-spacing: -0.055em;
 }
 
 body.page-home .hero-card p {
@@ -537,7 +541,7 @@ body.page-home .hero-card p {
 }
 
 body.page-home .hero-card-preview p {
-  max-width: 38ch;
+  max-width: 39ch;
   font-size: 1.04rem;
 }
 
@@ -2428,8 +2432,8 @@ body.page-cancel .hero-note {
   }
 
   body.page-home .hero-card h2 {
-    max-width: 10ch;
-    font-size: clamp(2.35rem, 6vw, 3.25rem);
+    max-width: 13ch;
+    font-size: clamp(2.15rem, 5.6vw, 3.05rem);
   }
 
   body.page-home .hero-specs {
@@ -2689,7 +2693,7 @@ body.page-cancel .hero-note {
   }
 
   body.page-home .hero-card h2 {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     line-height: 1;
   }
 
