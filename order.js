@@ -2,7 +2,7 @@ const DRAFT_KEY = "cnt-order-draft";
 const WINDOW_NAME_KEY = "cnt-order-demo";
 const DEMO_QUERY = "demo=1";
 const BASE_PRICE_CENTS = 44999;
-const SHIPPING_CENTS = 799;
+const SHIPPING_CENTS = 1499;
 const ADDON_PRICES = new Map([
   ["Rush production", 7499],
   ["Extra tray / duplicate tray", 9999],

@@ -10,7 +10,7 @@ const REQUIRED_FIELDS = [
 
 const MAX_QUANTITY = 10;
 const BASE_PRICE_CENTS = 44999;
-const SHIPPING_CENTS = 799;
+const SHIPPING_CENTS = 1499;
 const ADDON_PRICES = new Map([
   ["Rush production", 7499],
   ["Extra tray / duplicate tray", 9999],
