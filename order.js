@@ -1,7 +1,7 @@
 const DRAFT_KEY = "cnt-order-draft";
 const WINDOW_NAME_KEY = "cnt-order-demo";
 const DEMO_QUERY = "demo=1";
-const BASE_PRICE_CENTS = 2999;
+const BASE_PRICE_CENTS = 44999;
 const SHIPPING_CENTS = 799;
 const ADDON_PRICES = new Map([
   ["Rush production", 999],

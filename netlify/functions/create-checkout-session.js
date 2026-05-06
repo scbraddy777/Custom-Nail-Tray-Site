@@ -9,7 +9,7 @@ const REQUIRED_FIELDS = [
 ];
 
 const MAX_QUANTITY = 10;
-const BASE_PRICE_CENTS = 2999;
+const BASE_PRICE_CENTS = 44999;
 const SHIPPING_CENTS = 799;
 const ADDON_PRICES = new Map([
   ["Rush production", 999],
