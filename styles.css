@@ -979,9 +979,10 @@ body.page-how .how-hero-panel-list li:nth-child(3) {
 }
 
 body.page-order .page-hero {
-  gap: 28px;
-  padding: 78px 0 48px;
-  align-items: stretch;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+  padding: 78px 0 36px;
+  align-items: start;
   border: 1px solid rgba(36, 95, 223, 0.12);
   border-radius: 32px;
   background: linear-gradient(180deg, rgba(233, 93, 61, 0.08) 0%, rgba(255, 255, 255, 0.97) 100%);
@@ -1017,6 +1018,10 @@ body.page-order .page-hero-copy p:not(.kicker) {
 
 .order-hero-panel .order-hero-list span {
   background: var(--coral);
+}
+
+body.page-order .order-hero-panel-below {
+  margin-top: 28px;
 }
 
 .kit-section {
