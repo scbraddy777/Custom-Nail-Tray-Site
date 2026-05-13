@@ -62,9 +62,9 @@ body.page-faq {
 
 body.page-contact {
   background:
-    radial-gradient(circle at 12% 0%, rgba(233, 93, 61, 0.09), transparent 24%),
-    radial-gradient(circle at 90% 8%, rgba(36, 95, 223, 0.06), transparent 24%),
-    linear-gradient(180deg, #ffffff 0%, #f7f9fd 100%);
+    radial-gradient(circle at 12% 0%, rgba(233, 93, 61, 0.18), transparent 24%),
+    radial-gradient(circle at 90% 8%, rgba(255, 226, 217, 0.52), transparent 24%),
+    linear-gradient(180deg, #fff7f3 0%, #fffdfb 42%, #ffffff 100%);
 }
 
 body.page-success {
@@ -1823,7 +1823,7 @@ body.page-contact .breadcrumb {
 }
 
 body.page-contact .breadcrumb a {
-  color: var(--blue-deep);
+  color: var(--coral);
   font-weight: 700;
 }
 
@@ -1885,10 +1885,16 @@ body.page-contact .contact-callout p {
 body.page-contact .contact-callout a {
   display: inline-flex;
   margin-top: 14px;
-  color: var(--blue-deep);
+  color: var(--coral);
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+
+body.page-contact .contact-callout a:hover,
+body.page-contact .breadcrumb a:hover,
+body.page-contact .contact-email:hover {
+  color: #d84d2b;
 }
 
 body.page-contact .contact-layout {
@@ -1930,7 +1936,7 @@ body.page-contact .contact-card p {
 body.page-contact .contact-email {
   display: inline-flex;
   margin-top: 6px;
-  color: var(--blue-deep);
+  color: var(--coral);
   font-size: 1.25rem;
   font-weight: 800;
   text-decoration: none;
