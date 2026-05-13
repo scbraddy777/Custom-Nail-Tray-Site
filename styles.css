@@ -229,9 +229,12 @@ body.page-cancel .site-header .button-primary:hover {
 }
 
 .site-nav a {
+  color: var(--muted);
   padding: 8px 12px;
+  text-decoration: none;
   transition:
     color 160ms ease,
+    text-decoration-color 160ms ease,
     transform 160ms ease;
 }
 
@@ -244,7 +247,7 @@ body.page-cancel .site-header .button-primary:hover {
 }
 
 .site-nav a[href="faq.html"] {
-  --nav-accent: #a47f13;
+  --nav-accent: #b48b15;
 }
 
 .site-nav a[href="contact.html"] {
@@ -262,6 +265,9 @@ body.page-cancel .site-header .button-primary:hover {
 .site-nav a:focus-visible,
 .site-nav a[aria-current="page"] {
   color: var(--nav-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.26em;
   font-weight: 700;
 }
 
