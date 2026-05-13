@@ -21,7 +21,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -268,11 +268,6 @@ body.page-cancel .site-header .button-primary:hover {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 0.26em;
-  font-weight: 700;
-}
-
-.site-nav a[aria-current="page"] {
-  font-weight: 700;
 }
 
 body.page-faq .kicker {
