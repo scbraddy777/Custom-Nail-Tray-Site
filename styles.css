@@ -425,6 +425,8 @@ body.page-home .hero {
   align-items: center;
   min-height: auto;
   padding: 72px 0 42px;
+  width: min(1180px, calc(100% - 80px));
+  margin: 0 auto;
   background: transparent;
 }
 
@@ -702,7 +704,7 @@ body.page-home .statement-body p {
 .order-section,
 .cta-band,
 .site-footer {
-  width: min(1180px, calc(100% - 48px));
+  width: min(1180px, calc(100% - 80px));
   margin: 0 auto;
 }
 
@@ -2637,6 +2639,10 @@ body.page-cancel .hero-note {
   .order-section,
   .cta-band,
   .site-footer {
+    width: min(100% - 32px, 1180px);
+  }
+
+  body.page-home .hero {
     width: min(100% - 32px, 1180px);
   }
 
