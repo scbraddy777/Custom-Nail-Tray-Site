@@ -53,6 +53,13 @@ body.page-order {
     linear-gradient(180deg, #fff7f2 0%, #f3f7ff 38%, #fbfcff 100%);
 }
 
+body.page-faq {
+  background:
+    radial-gradient(circle at 14% 0%, rgba(244, 214, 103, 0.24), transparent 26%),
+    radial-gradient(circle at 92% 10%, rgba(255, 242, 184, 0.46), transparent 28%),
+    linear-gradient(180deg, #fffef3 0%, #fffdfa 42%, #ffffff 100%);
+}
+
 body.page-contact {
   background:
     radial-gradient(circle at 12% 0%, rgba(233, 93, 61, 0.09), transparent 24%),
@@ -97,21 +104,14 @@ body.page-order .site-header {
   background: rgba(245, 248, 255, 0.94);
 }
 
-body.page-contact .site-header {
+body.page-faq .site-header {
   background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 1px 0 rgba(17, 24, 39, 0.06);
 }
 
-body.page-how .site-nav a[aria-current="page"] {
-  color: var(--teal);
-}
-
-body.page-order .site-nav a[aria-current="page"] {
-  color: var(--coral);
-}
-
-body.page-contact .site-nav a[aria-current="page"] {
-  color: var(--coral);
+body.page-contact .site-header {
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 1px 0 rgba(17, 24, 39, 0.06);
 }
 
 body.page-how .button-primary {
@@ -130,6 +130,16 @@ body.page-order .button-primary {
 
 body.page-order .button-primary:hover {
   background: linear-gradient(135deg, #d84d2b 0%, #f0613e 100%);
+}
+
+body.page-faq .button-primary {
+  background: linear-gradient(135deg, #e2c44f 0%, #f5e59b 100%);
+  color: var(--ink);
+  box-shadow: 0 12px 24px rgba(201, 148, 41, 0.12);
+}
+
+body.page-faq .button-primary:hover {
+  background: linear-gradient(135deg, #d4b740 0%, #eddc82 100%);
 }
 
 body.page-contact .button-primary {
@@ -215,16 +225,59 @@ body.page-cancel .button-primary:hover {
 }
 
 .site-nav a {
-  padding: 8px 0;
+  padding: 8px 12px;
+  border-radius: 999px;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.site-nav a[href="index.html"] {
+  --nav-accent: var(--blue);
+  --nav-accent-soft: rgba(36, 95, 223, 0.12);
+}
+
+.site-nav a[href="how-it-works.html"] {
+  --nav-accent: var(--teal);
+  --nav-accent-soft: rgba(13, 128, 120, 0.14);
+}
+
+.site-nav a[href="faq.html"] {
+  --nav-accent: #a47f13;
+  --nav-accent-soft: rgba(245, 229, 170, 0.92);
+}
+
+.site-nav a[href="contact.html"] {
+  --nav-accent: var(--coral);
+  --nav-accent-soft: rgba(233, 93, 61, 0.14);
 }
 
 .site-nav a:hover,
+.site-nav a:focus-visible,
 .site-nav a[aria-current="page"],
 .site-footer a:hover,
 .instruction-panel a:hover,
 .form-note a:hover,
 .text-link:hover {
   color: var(--blue);
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.site-nav a[aria-current="page"] {
+  color: var(--nav-accent);
+  background: var(--nav-accent-soft);
+  box-shadow: inset 0 0 0 1px var(--nav-accent-soft);
+}
+
+.site-nav a[aria-current="page"] {
+  font-weight: 700;
+}
+
+body.page-faq .kicker {
+  color: #b48b15;
 }
 
 .button {
@@ -1010,6 +1063,33 @@ body.page-order .page-hero-copy p:not(.kicker) {
   max-width: 620px;
 }
 
+body.page-faq .page-hero {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+  padding: 84px 0 28px;
+  align-items: start;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body.page-faq .page-hero-copy {
+  display: grid;
+  align-content: start;
+  gap: 20px;
+}
+
+body.page-faq .page-hero-copy h1 {
+  max-width: 660px;
+  font-size: 4rem;
+  line-height: 0.96;
+}
+
+body.page-faq .page-hero-copy p:not(.kicker) {
+  max-width: 700px;
+}
+
 .order-hero-panel {
   display: grid;
   gap: 18px;
@@ -1543,21 +1623,24 @@ body.page-how .cta-band .button-primary:hover {
   border-bottom: 1px solid var(--line);
 }
 
-body.page-order .faq-section {
+body.page-order .faq-section,
+body.page-faq .faq-section {
   gap: 30px;
   padding: 42px;
   margin: 0 auto 96px;
-  border: 1px solid #d9e3f1;
+  border: 1px solid rgba(201, 148, 41, 0.14);
   border-radius: 24px;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  background: linear-gradient(180deg, #fffef7 0%, #fff9e1 100%);
   box-shadow: var(--shadow);
 }
 
-body.page-order .faq-list {
+body.page-order .faq-list,
+body.page-faq .faq-list {
   border-top: none;
 }
 
-body.page-order .faq-list details {
+body.page-order .faq-list details,
+body.page-faq .faq-list details {
   margin-bottom: 12px;
   padding: 0 18px;
   border: 1px solid #e3e8f0;
@@ -1569,17 +1652,31 @@ body.page-order .faq-list details:nth-child(odd) {
   background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
 }
 
+body.page-faq .faq-list details:nth-child(odd) {
+  background: linear-gradient(180deg, #ffffff 0%, #fffdf4 100%);
+}
+
 body.page-order .faq-list details:nth-child(even) {
   background: linear-gradient(180deg, #ffffff 0%, #fff7f2 100%);
 }
 
-body.page-order .faq-list summary {
+body.page-faq .faq-list details:nth-child(even) {
+  background: linear-gradient(180deg, #ffffff 0%, #fffbea 100%);
+}
+
+body.page-order .faq-list summary,
+body.page-faq .faq-list summary {
   padding: 18px 0;
   font-family: "Libre Franklin", sans-serif;
   letter-spacing: -0.02em;
 }
 
-body.page-order .faq-list p {
+body.page-faq .faq-list summary::marker {
+  color: #c09b2a;
+}
+
+body.page-order .faq-list p,
+body.page-faq .faq-list p {
   padding-bottom: 18px;
 }
 
@@ -2537,6 +2634,7 @@ body.page-cancel .hero-note {
   body.page-how .quality-section,
   body.page-order .order-section,
   body.page-order .faq-section,
+  body.page-faq .faq-section,
   body.page-order .order-layout,
   body.page-success .confirmation-shell,
   body.page-cancel .confirmation-shell {
@@ -2872,6 +2970,7 @@ body.page-cancel .hero-note {
   body.page-how .how-hero-panel,
   body.page-order .order-hero-panel,
   body.page-order .faq-section,
+  body.page-faq .faq-section,
   .fieldset-card,
   .order-summary-panel,
   .confirmation-card,
