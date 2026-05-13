@@ -169,6 +169,28 @@ body.page-cancel .button-primary:hover {
   background: linear-gradient(135deg, #d84d2b 0%, #f0613e 100%);
 }
 
+body.page-home .site-header .button-primary,
+body.page-how .site-header .button-primary,
+body.page-order .site-header .button-primary,
+body.page-faq .site-header .button-primary,
+body.page-contact .site-header .button-primary,
+body.page-success .site-header .button-primary,
+body.page-cancel .site-header .button-primary {
+  background: linear-gradient(135deg, var(--blue) 0%, #2d74ea 100%);
+  box-shadow: 0 12px 24px rgba(36, 95, 223, 0.18);
+  color: #fff;
+}
+
+body.page-home .site-header .button-primary:hover,
+body.page-how .site-header .button-primary:hover,
+body.page-order .site-header .button-primary:hover,
+body.page-faq .site-header .button-primary:hover,
+body.page-contact .site-header .button-primary:hover,
+body.page-success .site-header .button-primary:hover,
+body.page-cancel .site-header .button-primary:hover {
+  background: linear-gradient(135deg, var(--blue-deep) 0%, #1d4fb8 100%);
+}
+
 .site-header {
   display: grid;
   grid-template-columns: auto 1fr auto;
