@@ -91,44 +91,6 @@ img {
   width: 100%;
 }
 
-body.page-how .site-header,
-body.page-order .site-header {
-  box-shadow: 0 1px 0 rgba(17, 24, 39, 0.06);
-}
-
-body.page-home .site-header {
-  background: rgba(237, 243, 255, 0.96);
-  box-shadow: 0 1px 0 rgba(36, 95, 223, 0.08);
-}
-
-body.page-how .site-header {
-  background: rgba(247, 251, 253, 0.92);
-}
-
-body.page-order .site-header {
-  background: rgba(245, 248, 255, 0.94);
-}
-
-body.page-faq .site-header {
-  background: rgba(255, 252, 234, 0.96);
-  box-shadow: 0 1px 0 rgba(201, 148, 41, 0.08);
-}
-
-body.page-contact .site-header {
-  background: rgba(255, 245, 240, 0.96);
-  box-shadow: 0 1px 0 rgba(233, 93, 61, 0.08);
-}
-
-body.page-success .site-header {
-  background: rgba(240, 250, 246, 0.96);
-  box-shadow: 0 1px 0 rgba(13, 128, 120, 0.08);
-}
-
-body.page-cancel .site-header {
-  background: rgba(255, 245, 240, 0.96);
-  box-shadow: 0 1px 0 rgba(233, 93, 61, 0.08);
-}
-
 body.page-how .button-primary {
   background: linear-gradient(135deg, var(--teal) 0%, #109186 100%);
   box-shadow: 0 12px 24px rgba(13, 128, 120, 0.18);
@@ -289,9 +251,6 @@ body.page-cancel .site-header .button-primary:hover {
   --nav-accent: var(--coral);
 }
 
-.site-nav a:hover,
-.site-nav a:focus-visible,
-.site-nav a[aria-current="page"],
 .site-footer a:hover,
 .instruction-panel a:hover,
 .form-note a:hover,
@@ -303,6 +262,7 @@ body.page-cancel .site-header .button-primary:hover {
 .site-nav a:focus-visible,
 .site-nav a[aria-current="page"] {
   color: var(--nav-accent);
+  font-weight: 700;
 }
 
 .site-nav a[aria-current="page"] {
@@ -496,11 +456,6 @@ body.page-home {
     radial-gradient(circle at 14% 0%, rgba(36, 95, 223, 0.18), transparent 28%),
     radial-gradient(circle at 86% 12%, rgba(36, 95, 223, 0.07), transparent 26%),
     linear-gradient(180deg, #eef4ff 0%, #f7fbff 42%, #ffffff 100%);
-}
-
-body.page-home .site-header {
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 1px 0 rgba(17, 24, 39, 0.06);
 }
 
 body.page-home .kicker {
@@ -2511,10 +2466,6 @@ body.page-cancel .hero-note {
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 4px;
-}
-
-.page-success .site-header {
-  background: rgba(255, 255, 255, 0.96);
 }
 
 .page-success .confirmation-card {
