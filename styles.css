@@ -96,6 +96,11 @@ body.page-order .site-header {
   box-shadow: 0 1px 0 rgba(17, 24, 39, 0.06);
 }
 
+body.page-home .site-header {
+  background: rgba(237, 243, 255, 0.96);
+  box-shadow: 0 1px 0 rgba(36, 95, 223, 0.08);
+}
+
 body.page-how .site-header {
   background: rgba(247, 251, 253, 0.92);
 }
@@ -105,13 +110,23 @@ body.page-order .site-header {
 }
 
 body.page-faq .site-header {
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 1px 0 rgba(17, 24, 39, 0.06);
+  background: rgba(255, 252, 234, 0.96);
+  box-shadow: 0 1px 0 rgba(201, 148, 41, 0.08);
 }
 
 body.page-contact .site-header {
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 1px 0 rgba(17, 24, 39, 0.06);
+  background: rgba(255, 245, 240, 0.96);
+  box-shadow: 0 1px 0 rgba(233, 93, 61, 0.08);
+}
+
+body.page-success .site-header {
+  background: rgba(240, 250, 246, 0.96);
+  box-shadow: 0 1px 0 rgba(13, 128, 120, 0.08);
+}
+
+body.page-cancel .site-header {
+  background: rgba(255, 245, 240, 0.96);
+  box-shadow: 0 1px 0 rgba(233, 93, 61, 0.08);
 }
 
 body.page-how .button-primary {
@@ -204,6 +219,11 @@ body.page-cancel .site-header .button-primary:hover {
   background: rgba(255, 255, 255, 0.94);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(14px);
+  transition:
+    background-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
 }
 
 .brand {
@@ -296,6 +316,22 @@ body.page-cancel .site-header .button-primary:hover {
 
 .site-nav a[aria-current="page"] {
   font-weight: 700;
+}
+
+body:has(.site-nav a[href="index.html"]:is(:hover, :focus-visible)) .site-header {
+  background: rgba(233, 240, 255, 0.99);
+}
+
+body:has(.site-nav a[href="how-it-works.html"]:is(:hover, :focus-visible)) .site-header {
+  background: rgba(231, 248, 246, 0.99);
+}
+
+body:has(.site-nav a[href="faq.html"]:is(:hover, :focus-visible)) .site-header {
+  background: rgba(255, 248, 218, 0.99);
+}
+
+body:has(.site-nav a[href="contact.html"]:is(:hover, :focus-visible)) .site-header {
+  background: rgba(255, 238, 232, 0.99);
 }
 
 body.page-faq .kicker {
